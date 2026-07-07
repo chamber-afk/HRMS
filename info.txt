@@ -1,0 +1,12 @@
+About io
+
+"io is the global Socket.IO server instance. If an individual socket represents a single, live connection to one specific user, then io is the central control tower or switchboard that manages all active connections simultaneously."
+
+The Key Responsibilities (What it does)
+You can explain that you use io for three main architectural patterns in your app:
+
+Connection Management: It listens for incoming connection events (io.on('connection')) and handles authentication handshakes (like verifying JWTs) before letting users connect.
+
+Broadcasting: It has the authority to talk to everyone at once. For example, broadcasting a user's online status to the entire system.
+
+Room-Based Routing: It allows you to group connections dynamically. You can use it to target specific rooms—like io.to('admin-hr').emit()—to send real-time leave notifications to HR staff without needing to know their specific socket IDs
